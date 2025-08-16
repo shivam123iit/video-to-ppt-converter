@@ -479,11 +479,27 @@ if __name__ == '__main__':
     os.makedirs('outputs', exist_ok=True)
     os.makedirs('temp', exist_ok=True)
     
-    # Get port from environment (Railway/Render provide PORT variable)
+    # Get port from environment (Railway provides PORT variable)
     port = int(os.environ.get('PORT', 8000))
     
-    print(f"Starting Video to PowerPoint Converter on port {port}")
-    print("Access the web interface at: http://localhost:8000")
+    print(f"🚀 Starting Video to PowerPoint Converter")
+    print(f"📡 Server starting on port {port}")
+    print(f"🌐 Environment: {'Railway' if 'RAILWAY_' in str(os.environ) else 'Local'}")
+    
+    try:
+        # Run the Flask app with Railway-optimized settings
+        app.run(
+            host='0.0.0.0', 
+            port=port, 
+            debug=False,
+            threaded=True,
+            use_reloader=False
+        )
+    except Exception as e:
+        print(f"❌ Server failed to start: {e}")
+        print("🔧 Check logs for more details")
+        raise
     
     # Run the Flask app
+
     app.run(host='0.0.0.0', port=port, debug=False)
