@@ -1,0 +1,9 @@
+Flask==2.3.3
+opencv-python-headless==4.8.1.78
+python-pptx==0.6.21
+Pillow==10.0.1
+scikit-image==0.21.0
+yt-dlp==2023.10.13
+numpy==1.25.2
+gunicorn==21.2.0
+requests==2.31.0
