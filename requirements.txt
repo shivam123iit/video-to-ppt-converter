@@ -1,9 +1,23 @@
+# Core web framework
 Flask==2.3.3
-opencv-python-headless==4.8.1.78
-python-pptx==0.6.21
-Pillow==10.0.1
-scikit-image==0.21.0
-yt-dlp==2023.10.13
-numpy==1.25.2
 gunicorn==21.2.0
+
+# Video processing (headless version for servers)
+opencv-python-headless==4.8.1.78
+yt-dlp==2023.10.13
+
+# Image processing
+Pillow==10.0.1
+numpy==1.25.2
+
+# PowerPoint generation
+python-pptx==0.6.21
+
+# Image similarity (lightweight version)
+scikit-image==0.21.0
+
+# HTTP requests
 requests==2.31.0
+
+# System utilities
+psutil==5.9.5
